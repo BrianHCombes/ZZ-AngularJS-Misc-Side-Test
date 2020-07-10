@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+SelfEd: https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
+-->
+<html ng-app="NamedViewsComponent" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    
+    
+    <script src="named-views-w-component-config.js"></script> <!-- Listed first because ui-router dependency injected here -->
+    
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+
+
+    <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+                Below are multiple Views<br>No primary controller, Also using component property instead of template and controller properties in a named view.
+        </b>
+    </h1><br> 
+
+    <div ng-controller="viewsCTRL as viewsctrl">
+    
+        <div>{{viewsctrl.ctrTest}}</div>    
+
+    </div>
+</body>
+</html>

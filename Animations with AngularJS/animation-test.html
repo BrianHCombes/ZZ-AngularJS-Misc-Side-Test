@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="BasicSetup" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="animation-test-controller.js"></script> 
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+
+    <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+                Animations with AngularJS<br>
+                A Test Bed.
+        </b>
+    </h1><br> 
+
+    <div ng-controller="basicCtrl as basicCTRL">
+    
+        <div>{{basicCTRL.basicVar1}}</div>    
+
+    </div>
+</body>
+</html>
