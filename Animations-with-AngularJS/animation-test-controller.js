@@ -1,9 +1,9 @@
- angular.module('BasicSetup', [])
+ angular.module('ngAnimate', [])
         
-            .controller('basicCtrl', ['$log', '$scope', function($log, $scope) {
+            .controller('animateCTRL', ['$log', '$scope', function($log, $scope) {
                
-                var basic = this;
-                basic.basicVar1 = "YES! This is from the basicCtrl Controller";
+                var animate = this;
+                animate.testVar = "YES! This is from the animateCTRL Controller";
             
             }]);
                 
