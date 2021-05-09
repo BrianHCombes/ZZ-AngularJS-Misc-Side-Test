@@ -3,13 +3,20 @@
 <head>
 <!-- https://docs.angularjs.org/api/ng/directive/ngClass -->
 <!-- https://docs.angularjs.org/api/ng/service/$animate -->
+<!-- C:\xampp\htdocs\TTD-ViewNav-Home\ttd-vn-home\resources\common-templates\top_menu\buy_price\buy_price.html (Have animated the quick menu)-->
   
+<!--https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property-->
+<!--https://developer.mozilla.org/en-US/docs/Web/CSS/CSSOM_View/Coordinate_systems-->
+<!--https://www.w3schools.com/jsref/met_document_removeeventlistener.asp-->
+
 <meta charset="UTF-8">
 <title>Example - example-ng-class1-production</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 
 
-<script src="//code.angularjs.org/1.8.0/angular.min.js"></script>
+<!--<script src="//code.angularjs.org/1.8.0/angular.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>
 <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
 <script src="animation-test-controller.js"></script>
 
@@ -21,7 +28,7 @@
 
 <style>
   .wtf-class {
-  transition:all  0.25s;
+  transition:all  0.45s;
   color:blue;
   font-size:0em;
   width:0px;
@@ -30,8 +37,8 @@
   border:0px solid black;
   }
 
-  .my-class {
-    color: red;
+  .wtf-class.my-class {
+    color: blue;
     font-size:3em;
     width:800px;
     height:400px;
@@ -44,16 +51,18 @@
 
 <div ng-controller="animateCTRL as animateCtrl">  
   
-  <div style="position:relative;">
-    <input type="button" value="Quick Menu" ng-mouseover="myVar='my-class'" ng-mouseleave="myVar=''" ng-click="myVar='my-class'">
-    <br>
-    <div class="wtf-class" 
-          ng-class="myVar"
-          ng-mouseover="myVar='my-class'" 
-          ng-mouseleave="myVar=''"
-          style="position:absolute; left:0%;"
+  <div style="text-align:center;">
+    <div style="display:inline-block; position:relative; background-color:cyan;">
+      <input type="button" value="Quick Menu" ng-mouseover="myVar='my-class'" ng-mouseleave="myVar=''" ng-click="myVar='my-class'" style="font-size:2em;">
+      <br>
+      <div class="wtf-class" 
+            ng-class="myVar"
+            ng-mouseover="myVar='my-class'" 
+            ng-mouseleave="myVar=''"
+            style="position:absolute; {{animateCtrl.centering}} "
 
-          >TTD Quick Menu <br>{{animateCtrl.testVar}}
+            >TTD Quick Menu <br>{{animateCtrl.testVar}}
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,46 @@
+SelfEd Date: 		08/08/2020
+
+SelfEd Title:       Animations in Angular JS
+
+SelfEd Location:  Local:   C:\xampp\htdocs\ZZ-AngularJS-Misc-Side-Test\Animations-with-AngularJS\ngRepeat-Animation
+                  Cloud: 
+                                                                                                                               
+SelfEd Objective: To master animations of HTML elements. Mostly to show and un-show elements in an animated way for a better user experience.
+
+SelfEd Catalyst:  Improve user experience by using animations which are more pleasant
+
+SelfEd References:  https://docs.angularjs.org/api#-link-nganimate-nganimate-
+                    https://docs.angularjs.org/api/ng/directive/ngRepeat#animations
+                    https://docs.angularjs.org/api/ng/directive/ngClass         (This code structure is what I've mimicked so far for the most part. But expecting diversity)
+                    C:\xampp\htdocs\ZZ-AngularJS-Misc-Side-Test\Animations-with-AngularJS\animation-test-api_01.html
+                    https://docs.angularjs.org/guide/animations
+                    
+
+SelfEd Security:    None
+
+
+Process:
+
+08/08/2020
+  I've already gotten animations to work but from a CSS standpoint. So the only 
+  note here is say (so far) my animation approach is to essentially always have
+  the element (to animate) active but set to size and opacity of zero (via CSS)
+  as the default. Then animate to full size and opacity. 
+
+08/15/2020
+  Have found << tables >> using ng-repeat are tough to animate smoothly. 
+  The idea is to have a smooth opening for the table. One critical CSS 
+  property that helps smooth an opening is the << height >> property. By 
+  using the height property the lines of the list expand on their own rather
+  than being forced open by an expanding font size. This seems to smooth out
+  the transition.
+
+08/16/2020
+  Also, have located the transition property in (usually so far) more than one
+  CSS class group. But also found it's needed in only one CSS class group
+  depending on the effect you want. So play around with this to see what you
+  like best. case in point is to compare the Quick Menu animation to the
+  Local Menu animation. Here's their locations:
+  << C:\xampp\htdocs\TTD-ViewNav-Home\ttd-vn-home\resources\common-templates\template_menu\template-menu-component.html >>
+  << C:\xampp\htdocs\TTD-ViewNav-Home\ttd-vn-home\resources\common-templates\top_menu\buy_price\buy_price.html >>
+  Look at the CSS classes at the top of these HTML files.

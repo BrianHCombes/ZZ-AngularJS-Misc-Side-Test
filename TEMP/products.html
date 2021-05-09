@@ -1,0 +1,198 @@
+<link rel="stylesheet" type="text/css" href="https://www.tarptiedown.com/resources/common-templates/top_menu/products/products.css">
+<style>
+  {{$ctrl.itpLRcss}}
+  {{$ctrl.productDetailsCSS}}
+  
+  
+  /* Animation Classes */
+  .quickProductMenuDefault1 
+  {
+    transition:all  0.50s;
+    margin:1% auto; 
+    background-color:black; 
+    color:white; 
+    border-radius:0; 
+    font-size:0;
+    z-index:-1;
+    opacity:0;
+  }
+
+  .quickProductMenuAnimate1 
+  {
+    margin:1% auto; 
+    background-color:black; 
+    color:white; 
+    padding:5px; 
+    border-radius:5px; 
+    z-index:2;
+    opacity:1;
+    {{$ctrl.fontsize3}}; 
+    {{$ctrl.width1}};
+  }
+  
+/*   
+  .quickProductMenuDefault2 
+  {
+    transition:all  0.50s;
+    border:none; 
+    font-size:0; 
+    height:0; 
+    padding:0;
+    opacity:0;
+  }
+
+  .quickProductMenuAnimate2 
+  {
+    font-size:1.0em;
+    height:16px;
+    padding:2px;
+    border:2px solid black;
+    opacity:1;
+  }
+*/
+</style>
+
+
+<div class="viewStyle" id="pageTop1">
+    <div  data-ui-view="childView1" 
+          class="textStyle4 topTemplateMenu"
+          style="text-align:center;" 
+          >This shows the "Read about" and "Navigation menu" buttons. If you read this it's not working
+    </div> 
+    
+    <div id="pageTop2"
+         style="width:100%; 
+                text-align:center; 
+                {{$ctrl.fontsize2}};
+                ">
+        <div class="textStyle4"
+             style="font-size:3.0em;
+                    margin:5px 0px;
+                    "><b>OUR PRODUCTS</b>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <button class="btnStyle2" 
+                ng-click="quickProductTable = !quickProductTable"
+                ng-mouseover="QPMA1='quickProductMenuAnimate1'; QPMA2='quickProductMenuAnimate2'" 
+                ng-mouseleave="QPMA1=''; QMA2=''" 
+                ng-click="QPMA1='quickProductMenuAnimate1'; QPMA2='quickProductMenuAnimate2'"
+                style= "display:inline-block;
+                        text-decoration:none;
+                        padding:2px 10px;
+                        {{$ctrl.borderwidth1}};     
+                        {{$ctrl.margin1}};          
+                        {{$ctrl.fontweight1}};      
+                        {{$ctrl.fontsize5}};
+                       ">
+            <b>Quick Product Menu</b>
+        </button>
+    </div>
+    
+  
+  
+<!--  
+margin:1% auto; 
+                  background-color:black; 
+                  color:white; 
+                  padding:5px; 
+                  border-radius:5px; 
+                  {{$ctrl.fontsize3}}; 
+                  {{$ctrl.width1}};
+
+
+-->  
+  
+  
+  
+    
+    <div ng-show="!$ctrl.temporaryDisable" style="position:relative; top:-15px; {{$ctrl.left2}}">  
+      
+      <div  
+        class="textStyle4" 
+        style="">
+        <table class="tableBorder quickProductMenuDefault1" 
+               ng-class="QPMA1"
+               style="width:100%;">
+            <tr>
+                <th class="headerBorder topMenuNav" 
+
+                    title="{{$ctrl.title3}}">
+                        Quick Product Menu
+                        <span style="float:right;">&nbsp;</span>
+                        <span class="quickClose" 
+                              ng-click="quickProductTable = !quickProductTable" 
+                              style="float:right;">
+                        &#10062;
+                        </span><br>
+                        <span style="color:#aaaa00;">Scroll down or select here for details</span>
+                </th>
+            </tr>
+            <tr ng-repeat="quicklist in $ctrl.products.quickLIST">
+                <td class="dataBorder hyperMenuNav {{quicklist.rowClass}}">
+                    <a class="quickLink" 
+                       title="{{$ctrl.title1}}" 
+                       href="{{quicklist.localview}}"
+                       ng-bind-html="quicklist.product">
+                    </a>
+                </td>
+
+            </tr>    
+        </table>
+      </div>
+      
+    </div>  
+    
+<!--************************************************************************************************************************************************-->
+<!-- Full List -->
+    <table style="border:1px solid black; {{$ctrl.fontsize1}};">
+         <tr id="{{fullList.rowID}}" ng-repeat="fullList in $ctrl.products.fullLIST">
+            <td style=" width:40%; border:1px solid black; background-color:white; position:relative;">
+                <img src="{{fullList.productImage}}" alt="{{fullList.productImageAlt}}" style="width:100%;">
+                <button class="btnStyle2" title="Go to menu atop" ng-click="$ctrl.toTop()" ng-bind-html="$ctrl.toTopBtnHtmlSymbol"style="{{$ctrl.toTopBtnCSS}}"></button>
+            </td>
+            <td class="textBoxStyle3" style="padding:0.35%;">
+                <div class="textStyle4" 
+                     style="text-align:center;
+                            width:100%;
+                            padding:3px 0px;
+                            background-color:gray;
+                            color:white;
+                           "> 
+                            <span ng-bind-html="fullList.productDetails.A"></span>
+                            <span ng-bind-html="fullList.productDetails.B"></span>
+                            <div ng-bind-html="fullList.productDetails.C"></div>
+                            <button                                  
+                                ng-click="$ctrl.assignURL(fullList.productDetails.D)"
+                                class="btnStyle2"
+                                
+                                title="{{fullList.productDetails.E}}"
+                                style= "font-size:1.0em;
+                                        {{$ctrl.padding1}};         
+                                        {{$ctrl.borderwidth1}};     
+                                        {{$ctrl.margin1}};         
+                                        {{$ctrl.fontweight1}};     
+                                       "> 
+                                <span ng-bind-html="fullList.productDetails.F"></span>
+                            </button>
+                            <button
+                                ng-click="$ctrl.assignURL(fullList.productDetails.G)"
+                                class="btnStyle2"
+                                title="{{fullList.productDetails.H}}"
+                                style= "font-size:1.0em;
+                                        {{$ctrl.padding1}};         
+                                        {{$ctrl.borderwidth1}};     
+                                        {{$ctrl.margin1}};       
+                                        {{$ctrl.fontweight1}};   
+                                       "> 
+                                <span ng-bind-html="fullList.productDetails.I"></span>
+                            </button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+
+</script>        

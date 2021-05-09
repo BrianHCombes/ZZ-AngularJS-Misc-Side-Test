@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+  <title>TODO supply a title</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--<link href="ngRepeat-Animation/animations.css" rel="stylesheet" type="text/css">-->
+  <link href="animations.css" rel="stylesheet" type="text/css">
+  <script src="//code.angularjs.org/1.8.0/angular.min.js"></script>
+  <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
+  <!--<script src="ngRepeat-Animation/script.js"></script>-->
+  <script src="script.js"></script>
+  
+</head>
+<body ng-app="ngRepeat">
+  <div ng-controller="repeatController">
+    I have {{friends.length}} friends. They are:
+    <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
+    <ul class="example-animate-container">
+      <li class="animate-repeat" ng-repeat="friend in friends | filter:q as results track by friend.name">
+        [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+      </li>
+      <li class="animate-repeat" ng-if="results.length === 0">
+        <strong>No results found...</strong>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
