@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
     
     <!--<script src="//npmcdn.com/angular@1.6.5/angular.js"></script>-->
-    <script src="basic-controller.js"></script> 
+    <script src="controller-ngRepeat.js"></script> 
 
 <style>
   
@@ -25,6 +25,11 @@ a:active
 .style1
 {
   width:50px;
+}
+
+.highlight1
+{
+  color:red;
 }
 
 </style>
@@ -42,9 +47,13 @@ a:active
         <div>{{basicCTRL.basicVar1}}</div>    
         <div>{{basicCTRL.basicVar1}}</div>   
         <br><br>
-        <div ng-repeat="outer in basicCTRL.outer" ng-click="basicCTRL.outerTestFunc($index)">{{outer.property1}} and the index is: {{$index}}
-          <!--<div ng-repeat="Inner in Outer.property2" >&nbsp;&nbsp;{{Inner}}</div>-->
-          <a ng-repeat="Inner in outer.property2" href=""  ng-click="basicCTRL.testFunc($index)" ng-bind-html="Inner">
+        <div ng-repeat="outer in basicCTRL.outer track by outer.id" ng-click="basicCTRL.outerTestFunc($index)">{{outer.property1}} and the index is: {{$index}}
+          <!--<div ng-repeat="Inner in Outer.inner" >&nbsp;&nbsp;{{Inner}}</div>-->
+          <a ng-repeat="inner in outer.inner" 
+             href="" 
+             ng-click="basicCTRL.testFunc($index)" 
+             style="background-color:yellow; {{inner.textColor}}"
+             ng-bind-html="inner">
             
             
           </a>
