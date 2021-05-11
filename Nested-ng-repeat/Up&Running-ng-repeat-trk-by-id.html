@@ -29,7 +29,7 @@
   DOM Elements are reused every time someone clicks
   <div ng-repeat="note in ctrl.notes2 track by note.id">
     {{note.$$hashKey}}
-    <span class="label" style="{{note.css1}}"> Label is: {{note.label}} </span>
+    <span class="label" style="{{note.css1}}" ng-click="ctrl.changeNotes()"> Label is: {{note.label}} </span>
     <span class="author" ng-bind="note.done"></span>
   </div>
 
@@ -64,6 +64,10 @@
       self.notes1 = angular.copy(notes);
       self.notes2 = angular.copy(notes);
       self.changeNotes = function() {
+        
+        notes[0].label = "'Changed Note'";
+        notes[1].css1 = "background-color:cyan";
+/*         
         notes = [
           {
             id: 1,
@@ -85,7 +89,8 @@
             css1:'background-color:orange'
           }
         ];
-        
+*/
+    
         self.notes1 = angular.copy(notes);
         self.notes2 = angular.copy(notes);
       };

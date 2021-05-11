@@ -74,6 +74,8 @@
                   
                   
                   outer[basic.outerIndex].inner[basic.innerIndex] = "<br>WTF";
+                  outer[0].property1 = "Holely Molely";
+                  update();
 //                  for(var i=0; i < outerLength; i++ ){
 //                      
 //                      for(var j=0; j < innerLength; j++ ){
@@ -88,10 +90,18 @@
 //                        }  
 //                      }
 //                  }
+                   
+                  // window.setTimeout(function(){console.log("in setTimeout"); console.log("outer is: " + JSON.stringify(outer)); basic.outer = angular.copy(outer);},200);    
+                }  
                   
-                  window.setTimeout(function(){console.log("in setTimeout"); console.log("outer is: " + JSON.stringify(outer)); basic.outer = angular.copy(outer);},200);    
-                  
-                  
+                var update = function(){  
+                  console.log("In update");
+                  console.log("outer is: " + JSON.stringify(outer));
+//                  basic.outer[0].inner = angular.copy(outer[0].inner);
+//                  basic.outer[1].inner = angular.copy(outer[1].inner);
+//                  basic.outer[2].inner = angular.copy(outer[2].inner);
+                  basic.outer = angular.copy(outer);
+                }  
                   
                   
                   
@@ -113,7 +123,6 @@
                   
                  
                   
-                }
                 
                 
             
