@@ -105,7 +105,7 @@
                                             { "id":"3C",
                                               "img":"",
                                               "html":"<br>2",
-                                              "css":"color:red"
+                                              "css":""
                                             },  
                                             { "id":"3D",
                                               "img":"",
@@ -151,17 +151,19 @@
                 }
                 
                 
-                basic.highlight = function(outerID, innerID){
+                basic.highlight = function(thmbID){
                   
                   var outerLength = basic.outer.length;
                   var innerLength = basic.outer[basic.outerIndex].inner.length;
                   console.log("outerLength is: " + outerLength + "\ninnerLength is: " + innerLength)
                   console.log("basic.outerIndex is: " + basic.outerIndex + "\nbasic.innerIndex is: " + basic.innerIndex)
                   
-                  
+                  console.log("thmbID is: " + thmbID)
                   //outer[basic.outerIndex].inner[basic.innerIndex] = "<br>WTF";
-                  outer[0].property1 = "Holely Molely";
-                  outer[outerID].inner[innerID] = "<br>Who Dat!";
+                  if(thmbID === "2A"){
+                    outer[0].property1 = "Holely Molely";
+                    outer[0].inner[2].html = "<br>Who Dat!";
+                  }  
                   
                   update();
 //                  for(var i=0; i < outerLength; i++ ){
