@@ -10,37 +10,123 @@
                                   "id":1,  
                                   "property1":"Outer ng-repeat",
                                   "inner":[
-                                            "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
-                                            "<br>1",
-                                            "<br>2",
-                                            "<br>3",
-                                            "<br>4",
-                                            "<br>5",
-                                            "<br>6"
+                                            { "id":"1A",
+                                              "img":"",
+                                              "html":"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
+                                              "css":""
+                                            },
+                                            { "id":"1B",
+                                              "img":"",
+                                              "html":"<br>1",
+                                              "css":""
+                                            },  
+                                            { "id":"1C",
+                                              "img":"",
+                                              "html":"<br>2",
+                                              "css":""
+                                            },  
+                                            { "id":"1D",
+                                              "img":"",
+                                              "html":"<br>3",
+                                              "css":""
+                                            },  
+                                            { "id":"1E",
+                                              "img":"",
+                                              "html":"<br>4",
+                                              "css":""
+                                            },  
+                                            { "id":"1F",
+                                              "img":"",
+                                              "html":"<br>5",
+                                              "css":""
+                                            },  
+                                            { "id":"1G",
+                                              "img":"",
+                                              "html":"<br>6",
+                                              "css":""
+                                            }
                                           ]
                                 },
                                 {
                                   "id":2,  
                                   "property1":"Outer ng-repeat",  
                                   "inner":[
-                                            "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
-                                            "<br>1",
-                                            "<br>2",
-                                            "<br>3",
-                                            "<br>4",
-                                            "<br>5",
-                                            "<br>6"
+                                            { "id":"2A",
+                                              "img":"",
+                                              "html":"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
+                                              "css":""
+                                            },
+                                            { "id":"2B",
+                                              "img":"",
+                                              "html":"<br>1",
+                                              "css":""
+                                            },  
+                                            { "id":"2C",
+                                              "img":"",
+                                              "html":"<br>2",
+                                              "css":""
+                                            },  
+                                            { "id":"2D",
+                                              "img":"",
+                                              "html":"<br>3",
+                                              "css":""
+                                            },  
+                                            { "id":"2E",
+                                              "img":"",
+                                              "html":"<br>4",
+                                              "css":""
+                                            },  
+                                            { "id":"2F",
+                                              "img":"",
+                                              "html":"<br>5",
+                                              "css":""
+                                            },  
+                                            { "id":"2G",
+                                              "img":"",
+                                              "html":"<br>6",
+                                              "css":""
+                                            }
                                           ]
                                 },
                                 {
                                   "id":3,  
                                   "property1":"Outer ng-repeat",
                                   "inner":[
-                                            "<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
-                                            "<br>1",
-                                            "<br>2",
-                                            "<br>3",
-                                            "<br>4"
+                                            { "id":"3A",
+                                              "img":"",
+                                              "html":"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
+                                              "css":""
+                                            },
+                                            { "id":"3B",
+                                              "img":"",
+                                              "html":"<br>1",
+                                              "css":""
+                                            },  
+                                            { "id":"3C",
+                                              "img":"",
+                                              "html":"<br>2",
+                                              "css":"color:red"
+                                            },  
+                                            { "id":"3D",
+                                              "img":"",
+                                              "html":"<br>3",
+                                              "css":""
+                                            },  
+                                            { "id":"3E",
+                                              "img":"",
+                                              "html":"<br>4",
+                                              "css":""
+                                            },  
+                                            { "id":"3F",
+                                              "img":"",
+                                              "html":"<br>5",
+                                              "css":""
+                                            },  
+                                            { "id":"3G",
+                                              "img":"",
+                                              "html":"<br>6",
+                                              "css":""
+                                            }
                                           ]
                                 }
                               ]  
@@ -55,7 +141,7 @@
                   basic.outerIndex = index;
                   console.log("Outer has made it back to the controller and the outer index is: " + index);
                   
-                  window.setTimeout(function(){basic.highlight();},200);
+//                  window.setTimeout(function(){basic.highlight();},200);
                 }
                 
                 basic.testFunc = function(index){
@@ -65,7 +151,7 @@
                 }
                 
                 
-                basic.highlight = function(){
+                basic.highlight = function(outerID, innerID){
                   
                   var outerLength = basic.outer.length;
                   var innerLength = basic.outer[basic.outerIndex].inner.length;
@@ -73,8 +159,10 @@
                   console.log("basic.outerIndex is: " + basic.outerIndex + "\nbasic.innerIndex is: " + basic.innerIndex)
                   
                   
-                  outer[basic.outerIndex].inner[basic.innerIndex] = "<br>WTF";
+                  //outer[basic.outerIndex].inner[basic.innerIndex] = "<br>WTF";
                   outer[0].property1 = "Holely Molely";
+                  outer[outerID].inner[innerID] = "<br>Who Dat!";
+                  
                   update();
 //                  for(var i=0; i < outerLength; i++ ){
 //                      
@@ -96,7 +184,7 @@
                   
                 var update = function(){  
                   console.log("In update");
-                  console.log("outer is: " + JSON.stringify(outer));
+                  console.log("outer is: " + JSON.stringify(outer[0]) + "\n" + JSON.stringify(outer[1])+ "\n" + JSON.stringify(outer[2]));
 //                  basic.outer[0].inner = angular.copy(outer[0].inner);
 //                  basic.outer[1].inner = angular.copy(outer[1].inner);
 //                  basic.outer[2].inner = angular.copy(outer[2].inner);
