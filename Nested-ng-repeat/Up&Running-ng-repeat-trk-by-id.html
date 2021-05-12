@@ -63,9 +63,10 @@
       ];
       self.notes1 = angular.copy(notes);
       self.notes2 = angular.copy(notes);
+      
       self.changeNotes = function() {
-        
-        notes[0].label = "'Changed Note'";
+        console.log("In changeNotes");
+        notes[0].label = "Changed Note";
         notes[1].css1 = "background-color:cyan";
 /*         
         notes = [
@@ -90,7 +91,6 @@
           }
         ];
 */
-    
         self.notes1 = angular.copy(notes);
         self.notes2 = angular.copy(notes);
       };
