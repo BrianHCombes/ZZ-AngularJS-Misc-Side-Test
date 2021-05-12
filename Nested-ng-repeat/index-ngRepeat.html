@@ -52,7 +52,7 @@ a:active
           
           <a ng-repeat="inner in outer.inner" 
              href="" 
-             ng-click="basicCTRL.highlight('2E')" 
+             ng-click="basicCTRL.highlight(inner.id)" 
              style="background-color:yellow; {{inner.css}}"
              ng-bind-html="inner.html">
           </a>
