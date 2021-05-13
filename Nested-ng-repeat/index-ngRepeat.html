@@ -47,7 +47,7 @@ a:active
         <div>{{basicCTRL.basicVar1}}</div>    
         <div>{{basicCTRL.basicVar1}}</div>   
         <br><br>
-        <div ng-repeat="outer in basicCTRL.outer track by outer.id" ng-click="basicCTRL.outerTestFunc($index)">{{outer.property1}} and the index is: {{$index}}
+        <div ng-repeat="outer in basicCTRL.outer track by outer.id">{{outer.property1}} and the index is: {{$index}}
           <!--<div ng-repeat="Inner in Outer.inner" >&nbsp;&nbsp;{{Inner}}</div>-->
           
           <a ng-repeat="inner in outer.inner" 

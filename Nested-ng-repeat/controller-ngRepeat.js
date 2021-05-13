@@ -10,37 +10,37 @@
                                   "id":1,  
                                   "property1":"Outer ng-repeat",
                                   "inner":[
-                                            { "id":"1A",
+                                            { "id":"intro",
                                               "img":"",
                                               "html":"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
                                               "css":""
                                             },
-                                            { "id":"1B",
+                                            { "id":"thmb00",
                                               "img":"",
                                               "html":"<br>1",
                                               "css":""
                                             },  
-                                            { "id":"1C",
+                                            { "id":"thmb01",
                                               "img":"",
                                               "html":"<br>2",
                                               "css":""
                                             },  
-                                            { "id":"1D",
+                                            { "id":"thmb02",
                                               "img":"",
                                               "html":"<br>3",
                                               "css":""
                                             },  
-                                            { "id":"1E",
+                                            { "id":"thmb03",
                                               "img":"",
                                               "html":"<br>4",
                                               "css":""
                                             },  
-                                            { "id":"1F",
+                                            { "id":"thmb04",
                                               "img":"",
                                               "html":"<br>5",
                                               "css":""
                                             },  
-                                            { "id":"1G",
+                                            { "id":"thmb05",
                                               "img":"",
                                               "html":"<br>6",
                                               "css":""
@@ -51,37 +51,37 @@
                                   "id":2,  
                                   "property1":"Outer ng-repeat",  
                                   "inner":[
-                                            { "id":"2A",
+                                            { "id":"thmb06",
                                               "img":"",
                                               "html":"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
                                               "css":""
                                             },
-                                            { "id":"2B",
+                                            { "id":"thmb07",
                                               "img":"",
                                               "html":"<br>1",
                                               "css":""
                                             },  
-                                            { "id":"2C",
+                                            { "id":"thmb08",
                                               "img":"",
                                               "html":"<br>2",
                                               "css":""
                                             },  
-                                            { "id":"2D",
+                                            { "id":"thmb09",
                                               "img":"",
                                               "html":"<br>3",
                                               "css":""
                                             },  
-                                            { "id":"2E",
+                                            { "id":"thmb10",
                                               "img":"",
                                               "html":"<br>4",
                                               "css":""
                                             },  
-                                            { "id":"2F",
+                                            { "id":"thmb11",
                                               "img":"",
                                               "html":"<br>5",
                                               "css":""
                                             },  
-                                            { "id":"2G",
+                                            { "id":"thmb12",
                                               "img":"",
                                               "html":"<br>6",
                                               "css":""
@@ -92,63 +92,72 @@
                                   "id":3,  
                                   "property1":"Outer ng-repeat",
                                   "inner":[
-                                            { "id":"3A",
+                                            { "id":"thmb13",
                                               "img":"",
                                               "html":"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inner ng-repeat<br><img src='image.png' class='style1'>",
                                               "css":""
                                             },
-                                            { "id":"3B",
+                                            { "id":"thmb14",
                                               "img":"",
                                               "html":"<br>1",
                                               "css":""
                                             },  
-                                            { "id":"3C",
+                                            { "id":"thmb15",
                                               "img":"",
                                               "html":"<br>2",
                                               "css":""
                                             },  
-                                            { "id":"3D",
+                                            { "id":"thmb16",
                                               "img":"",
                                               "html":"<br>3",
                                               "css":""
                                             },  
-                                            { "id":"3E",
+                                            { "id":"thmb17",
                                               "img":"",
                                               "html":"<br>4",
                                               "css":""
                                             },  
-                                            { "id":"3F",
+                                            { "id":"thmb18",
                                               "img":"",
                                               "html":"<br>5",
                                               "css":""
                                             },  
-                                            { "id":"3G",
+                                            { "id":"thmb19",
                                               "img":"",
                                               "html":"<br>6",
                                               "css":""
                                             }
                                           ]
                                 }
-                              ]  
+                              ];  
                               
-              basic.outer = angular.copy(outer);                
-                              
+              basic.outer = angular.copy(outer);    
+              
+              
+              var idArray = [];
+              for(var i = 0; i < outer.length; i++){
+                for(var j = 0; j < outer[i].inner.length; j++){
+                  idArray.push(outer[i].inner[j].id);
+                }
+              }
+              console.log("idArray is: " + idArray);
+                
                 //basic.testArray = [1,2,3,4];              
                 
                 basic.outerIndex = 0;
                 basic.innerIndex = 0;
-                basic.outerTestFunc = function(index){
-                  basic.outerIndex = index;
-                  console.log("Outer has made it back to the controller and the outer index is: " + index);
-                  
-//                  window.setTimeout(function(){basic.highlight();},200);
-                }
+//                basic.outerTestFunc = function(index){
+//                  basic.outerIndex = index;
+//                  console.log("Outer has made it back to the controller and the outer index is: " + index);
+//                  
+////                  window.setTimeout(function(){basic.highlight();},200);
+//                }
                 
-                basic.testFunc = function(index){
-                  basic.innerIndex = index;
-                  console.log("Inner has made it back to the controller and the inner index is: " + index);
-                  
-                }
+//                basic.testFunc = function(index){
+//                  basic.innerIndex = index;
+//                  console.log("Inner has made it back to the controller and the inner index is: " + index);
+//                  
+//                }
                 
                 
                 basic.highlight = function(thmbID){
@@ -160,10 +169,18 @@
                   
                   console.log("thmbID is: " + thmbID)
                   //outer[basic.outerIndex].inner[basic.innerIndex] = "<br>WTF";
-                  if(thmbID === "2A"){
+                  if(thmbID === "thmb12"){
                     outer[0].property1 = "Holely Molely";
                     outer[0].inner[2].html = "<br>Who Dat!";
                   }  
+                  
+                  for(var i = 0; i < idArray.length; i++){
+                    if(thmbID === idArray[i]){
+                      console.log("thmbID is: " + thmbID);
+                    }
+                  }
+                  
+                  
                   
                   update();
 //                  for(var i=0; i < outerLength; i++ ){
