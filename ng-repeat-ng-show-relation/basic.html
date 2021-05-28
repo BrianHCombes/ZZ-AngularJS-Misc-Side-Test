@@ -6,31 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
     
+<!--    
+    Used in TTD-ViewNav platforms
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>
     <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
     <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
     
-    <!--<script src="//npmcdn.com/angular@1.6.5/angular.js"></script>-->
-    <script src="controller-ngRepeat.js"></script> 
+-->    
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="basic-controller.js"></script> 
 
 <style>
-  
-a:active 
-{
-  background-color: green;
-  text-shadow: 0px 0px 25px black, 0px 0px 25px black, 0px 0px 25px black, 0px 0px 25px black, 0px 0px 25px black, 0px 0px 25px black, 0px 0px 25px black, 0px 0px 25px black;
-}
-
-.style1
-{
-  width:50px;
-}
-
-.highlight1
-{
-  color:red;
-}
 
 </style>
 </head>
@@ -38,29 +28,14 @@ a:active
 
     <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
         <b>
-                These are the nested ng-repeat testing grounds.
+                Below is a message from a plain vanilla controller.
         </b>
     </h1><br> 
 
     <div ng-controller="basicCtrl as basicCTRL">
     
         <div>{{basicCTRL.basicVar1}}</div>    
-        <div>{{basicCTRL.basicVar1}}</div>   
-        <br><br>
-        <table>
-          <tr>
-            <td ng-repeat="outer in basicCTRL.outer track by outer.id">{{outer.property1}} and the index is: {{$index}}
-              <a ng-repeat="inner in outer.inner" 
-                 href=""
-                 target="_blank"
-                 ng-click="basicCTRL.highlight(inner.id)" 
-                 style="{{inner.css}}"
-                 ng-bind-html="inner.html">
-              </a>
-            </td>
-          </tr>
-        </table>
-        
+
     </div>
 </body>
 </html>
