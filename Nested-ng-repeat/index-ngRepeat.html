@@ -47,16 +47,20 @@ a:active
         <div>{{basicCTRL.basicVar1}}</div>    
         <div>{{basicCTRL.basicVar1}}</div>   
         <br><br>
-        <div ng-repeat="outer in basicCTRL.outer track by outer.id">{{outer.property1}} and the index is: {{$index}}
-          <a ng-repeat="inner in outer.inner" 
-             href=""
-             target="_blank"
-             ng-click="basicCTRL.highlight(inner.id)" 
-             style="{{inner.css}}"
-             ng-bind-html="inner.html">
-          </a>
-          <br><br>
-        </div>
+        <table>
+          <tr>
+            <td ng-repeat="outer in basicCTRL.outer track by outer.id">{{outer.property1}} and the index is: {{$index}}
+              <a ng-repeat="inner in outer.inner" 
+                 href=""
+                 target="_blank"
+                 ng-click="basicCTRL.highlight(inner.id)" 
+                 style="{{inner.css}}"
+                 ng-bind-html="inner.html">
+              </a>
+            </td>
+          </tr>
+        </table>
+        
     </div>
 </body>
 </html>

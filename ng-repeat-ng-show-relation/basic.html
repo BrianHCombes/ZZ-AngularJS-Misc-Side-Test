@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="BasicSetup" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+<!--    
+    Used in TTD-ViewNav platforms
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>
+    <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
+    
+-->    
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="basic-controller.js"></script> 
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+  <h1>Learning the scope of ng-repeated elements</h1>
+    <h3 style="color:black; text-align:left; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+          Below is a test to set a var within an ng-repeated generated element.<br> 
+          The var is used for ng-show purposes.<br> 
+          Directly setting the var <span style='color:red;'>(think ng-mouseenter="showVar = 1")</span> doesn't seem to work inside an ng-repeated element.<br>
+          It appears the only way to do this is to call a function and have ng-show set from the controller.<br>
+          <span style="color:red;">(Think ng-mouseenter="showfunc()")</span> within the ng-repeated element.<br><br>
+          Here's a link <a href='https://stackoverflow.com/questions/17828899/angularjs-setting-a-variable-in-a-ng-repeat-generated-scope' target='_blank'>
+            angularjs-setting-a-variable-in-a-ng-repeat-generated-scope
+          </a>
+        </b>
+    </h3> 
+
+    <div ng-controller="basicCtrl as basicCTRL">
+        <br>
+        <h2>{{basicCTRL.basicVar1}}</h2>    
+        <br>
+        <div ng-repeat="ngr in basicCTRL.ngRepeatTest">
+          <div 
+                ng-mouseenter="basicCTRL.showTest($index+1);"
+                ng-mouseleave="basicCTRL.showTest(0);"
+                
+                style="padding:20px; border:1px solid black; background-color:yellow;"
+                >
+            Hover on this ng-repeated element to show a hidden element using ng-show
+          </div><br><br>
+        </div>
+        <div ng-show="basicCTRL.showDivViaController" style="color:blue; font-size:2.5em;">
+          This div is now showing. <br>
+          The calling element index is {{basicCTRL.ngRepeatElementIndex}}
+        </div>
+    </div>
+</body>
+</html>
