@@ -10,8 +10,9 @@
                 //basic.showDivViaController = "1";
                 basic.showTest =  function(enable){
                                     console.log("Made back to Controller and enable is: " + enable)
-                                    if(enable === 1){
+                                    if(enable >= 1){
                                       basic.showDivViaController = 1;
+                                      basic.ngRepeatElementIndex = enable-1;
                                     }
                                     else { 
                                       console.log("inside");

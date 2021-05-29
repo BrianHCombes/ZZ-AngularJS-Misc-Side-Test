@@ -45,7 +45,7 @@
         <br>
         <div ng-repeat="ngr in basicCTRL.ngRepeatTest">
           <div 
-                ng-mouseenter="basicCTRL.showTest(1);"
+                ng-mouseenter="basicCTRL.showTest($index+1);"
                 ng-mouseleave="basicCTRL.showTest(0);"
                 
                 style="padding:20px; border:1px solid black; background-color:yellow;"
@@ -53,7 +53,10 @@
             Hover on this ng-repeated element to show a hidden element using ng-show
           </div><br><br>
         </div>
-        <div ng-show="basicCTRL.showDivViaController" style="color:blue; font-size:2.5em;">This div is showing</div>
+        <div ng-show="basicCTRL.showDivViaController" style="color:blue; font-size:2.5em;">
+          This div is now showing. <br>
+          The calling element index is {{basicCTRL.ngRepeatElementIndex}}
+        </div>
     </div>
 </body>
 </html>
