@@ -1,9 +1,9 @@
- angular.module('BasicSetup', [])
+ angular.module('PromiseRoutine', [])
         
-            .controller('basicCtrl', ['$log', '$scope', function($log, $scope) {
+            .controller('promiseCtrl', ['$log', '$scope', function($log, $scope) {
                
-                var basic = this;
-                basic.basicVar1 = "YES! This is from the basicCtrl Controller";
+                var prom = this;
+                prom.promVar1 = "YES! This is from the promiseCtrl Controller";
             
             }]);
                 
