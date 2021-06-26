@@ -16,9 +16,8 @@
     <!--<script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>-->
     
     <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
-    <script src="module-config-controller.js" defer></script> 
+    <script src="module-config-controller.js" defer></script> <!-- Load this first since the module is defined here with the '[]' brackets -->
     <script src="module-config-service.js" defer></script>
-    <script src="test-file.js" defer></script>
     
 
 <style>
@@ -45,7 +44,10 @@
           &bull; Only to find out it was to make sure the module-config-controller.js file is listed before the 'module-config-service.js' file in the default index.html file 
           (called module-config.html in this case) because the 'module-config-controller.js' is where the module is defined per the '[]' brackets. 
           Thus, the 'module-config-controller.js' file has to be loaded first.<br><br> 
-          &bull; See the book AngularJS Up and Running - Chapter 5 about AngularJS services.
+          &bull; See the book AngularJS Up and Running - Chapter 5 about AngularJS services.<br><br><br>
+          
+          &bull; Nobody spoke of the load order save for Yvonne Aburrow in this stackoverflow post: <br> 
+          <a href = "https://stackoverflow.com/questions/31394850/module-is-not-available-misspelled-or-forgot-to-load-but-i-didnt" target = "_blank"> Footnote from Yvonne</a>
         </div>
         
 
