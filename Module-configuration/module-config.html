@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-controller="moduleConfigCtrl as moduleConfigCTRL" ng-app="ModuleConfigRoutine" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+    <!--Use these as reference-->
+    <!--Used in TTD-ViewNav platforms-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>-->
+    <!--<script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>-->
+    <!--<script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>-->
+    <!--<script src="//npmcdn.com/show-current-browser-url"></script>-->
+    <!--<script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>-->
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="module-config-controller.js" defer></script> 
+    <script src="module-config-service.js" defer></script>
+    <script src="test-file.js" defer></script>
+    
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+
+    <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+                Below is a message from the controller.
+        </b>
+    </h1><br> 
+
+    <div >
+    
+        <div>{{moduleConfigCTRL.modConfigVar1}}</div>    
+        <br><br>
+        <div style="color:blue; font-size:1.25em; font-family:arial;">{{moduleConfigCTRL.modConfigVar2}}</div>   
+        <br><br>
+        <div> 
+          &bull; The original reason this turned into a side test is I had a terrible time getting the 
+          module to work when configured as a separate file named module-config-service.js.<br><br> 
+          &bull; Only to find out it was to make sure the module-config-controller.js file is listed before the 'module-config-service.js' file in the default index.html file 
+          (called module-config.html in this case) because the 'module-config-controller.js' is where the module is defined per the '[]' brackets. 
+          Thus, the 'module-config-controller.js' file has to be loaded first.<br><br> 
+          &bull; See the book AngularJS Up and Running - Chapter 5 about AngularJS services.
+        </div>
+        
+
+    </div>
+</body>
+</html>
