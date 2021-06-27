@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="PromiseRoutine" >
+<html ng-controller="promiseCtrl as promiseCTRL" ng-app="PromiseRoutine" >
 <head>
     <title>Multiple Views Multiple Controllers</title>
     <meta charset="UTF-8">
@@ -14,11 +14,15 @@
     <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
     
 -->    
-    <script src="//npmcdn.com/show-current-browser-url"></script>
-    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    <!--<script src="//npmcdn.com/show-current-browser-url"></script>-->
+    <!--<script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>-->
     
     <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
-    <script src="promise-controller.js"></script> 
+    <script src="promise-controller.js" defer></script> 
+    <!--<script src="Promise-routine/promise-http-service.js" defer></script>-->
+    <script src="promise-http-service.js" defer></script>
+    <script src="test-file.js" defer></script>
+    
 
 <style>
 
@@ -28,11 +32,11 @@
 
     <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
         <b>
-                Below is a message from a plain vanilla controller.
+                Below is a message from the promise controller.
         </b>
     </h1><br> 
 
-    <div ng-controller="promiseCtrl as promiseCTRL">
+    <div >
     
         <div>{{promiseCTRL.promVar1}}</div>    
 
