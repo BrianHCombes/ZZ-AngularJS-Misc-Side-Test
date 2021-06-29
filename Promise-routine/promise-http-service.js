@@ -27,8 +27,8 @@ angular.module("PromiseRoutine")
                               var returnDat2 = "";
                               var returnDat3 = "";
                               $http.get('promise-routine3.json', { cache: true })
-                                      .then(function(resp1) { console.log(resp1.data.promDatFile3Key3); return promiseDataRef2(resp1)}, function(ErrorResp1){console.error("ERROR! ERROR! is: " + ErrorResp1.data + "\n\n\n" + JSON.stringify(ErrorResp1));})
-                                      //.then(function(resp2) {console.log("In the second then and passed in is: " + resp2)}, function(ErrorResp2){console.error("ERROR! ERROR! is: " + JSON.stringify(ErrorResp2));})
+                                      .then(function(resp1) { console.log(resp1.data.promDatFile3Key3); promiseDataRef2(resp1); return resp1.data.promDatFile3Key3}, function(ErrorResp1){console.error("ERROR! ERROR! is: " + ErrorResp1.data + "\n\n\n" + JSON.stringify(ErrorResp1));})
+                                      .then(function(resp2) {console.log("In the second 'then' and passed in is: " + resp2)}, function(ErrorResp2){console.error("ERROR! ERROR! is: " + JSON.stringify(ErrorResp2));})
 //                                    .then(function(resp2) {}, function(ErrorResp2){console.error("ERROR! ERROR! is: " + JSON.stringify(ErrorResp2));})
 //                                      .then(function(resp1) {}, function(ErrorResp3){console.error("ERROR! ERROR! is: " + JSON.stringify(ErrorResp3));});
                                     
