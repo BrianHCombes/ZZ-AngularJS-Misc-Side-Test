@@ -25,7 +25,7 @@
                 
                 
                 var hello2 = async function() {
-                  var greeting = await Promise.resolve("Hello2");
+                  var greeting = await Promise.resolve("Hello2 - Click OK to get to the rest");
                   return greeting;
                 };
 
