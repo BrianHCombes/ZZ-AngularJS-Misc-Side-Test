@@ -8,6 +8,7 @@
 
 <script>
 async function getFile() {
+/*   
   let myPromise = new Promise(function(myResolve) {
         var callBackReturn = function(data){
           myResolve(data);
@@ -15,13 +16,19 @@ async function getFile() {
         testCallBack(callBackReturn);
   });
   document.getElementById("demo").innerHTML = await myPromise;
+*/
+
+    let myAsyncAwait = await testCallBack();
+
+    document.getElementById("demo").innerHTML = myAsyncAwait;
+
 }
 
 getFile();
 
 
-function testCallBack(callBackRef){
-  callBackRef("SUPER DUPER WTF!");
+function testCallBack(){
+  return "SUPER DUPER MEGA WTF!";
 }
 
 
