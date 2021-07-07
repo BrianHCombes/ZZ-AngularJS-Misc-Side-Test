@@ -12,38 +12,22 @@
 /*https://www.w3schools.com/Js/tryit.asp?filename=tryjs_promise1*/
 
   
-function myDisplayer(some) {
-  document.getElementById("demo").innerHTML = some;
+function myDisplayer(data) {
+  document.getElementById("demo").innerHTML = data;
 }
 
 let myPromise = new Promise(function(myResolve) {
-/*   
-  let req = new XMLHttpRequest();
-  req.open('GET', "test-space-file-retrieved.txt");
-  req.onload = function() {
-    if (req.status == 200) {
-      myResolve(req.response);
-    } else {
-      console.log("File not Found");
-    }
-  };
-  req.send();
-*/
-    
-  // myResolve("WTF");
   
   var callBackReturn = function(data){
-    
     myResolve(data);
   }
   testCallBack(callBackReturn);
-    
-  
   
 });
 
-myPromise.then(
-  function(value) {myDisplayer(value);},
+
+myPromise.then(function(value) {
+    myDisplayer(value);},
 );
 
 
