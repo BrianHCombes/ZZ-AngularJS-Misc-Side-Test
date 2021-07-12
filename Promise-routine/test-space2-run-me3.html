@@ -15,7 +15,9 @@
 
 <p id="demo2"></p>
 
-<p id="demo3">From Day One</p>
+<p id="demo3"></p>
+
+<p id="demo4">From Day One</p>
 
 
 <script>
@@ -25,9 +27,15 @@ async function getFile() {
     document.getElementById("demo1").innerHTML = "Async Await architecture: " + myAsyncAwait1;
     
     let myAsyncAwait2 = await testCallBack2();
-    document.getElementById("demo2").innerHTML = myAsyncAwait2;
+    document.getElementById("demo2").innerHTML = "Async Await architecture: " + myAsyncAwait2;
     
-    document.getElementById("demo3").innerHTML = "Another Day";
+    var delayedStuff = function(myAsyncAwait3){
+        document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return. " + myAsyncAwait3;
+    }
+    testCallBack3(delayedStuff);
+    
+    
+    document.getElementById("demo4").innerHTML = "Another Day";
 }
 getFile();
 
@@ -49,6 +57,22 @@ function testCallBack2(){
       }, 750);
     });  
 }
+
+
+var testCallBack3 = function(delayedStuffRef){
+   
+      var value = "WTF";
+      setTimeout(func1, 2750);
+      console.log("value is: " + value);
+      var value1 = "WTF";
+      function func1(){
+        console.log("value1 from setTimeout is: " + value1);    
+        delayedStuffRef(value1);
+      };
+}
+
+
+
 
 
 
