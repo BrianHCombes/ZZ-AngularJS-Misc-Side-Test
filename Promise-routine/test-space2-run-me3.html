@@ -17,7 +17,7 @@
 
 <p id="demo3"></p>
 
-<p id="demo4">From Day One</p>
+<p id="demo4">From Day One comes.....</p>
 
 
 <script>
@@ -30,10 +30,9 @@ async function getFile() {
     document.getElementById("demo2").innerHTML = "Async Await architecture: " + myAsyncAwait2;
     
     var delayedStuff = function(myAsyncAwait3){
-        document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return. " + myAsyncAwait3;
+        document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return of.... " + myAsyncAwait3;
     }
     testCallBack3(delayedStuff);
-    
     
     document.getElementById("demo4").innerHTML = "Another Day";
 }
