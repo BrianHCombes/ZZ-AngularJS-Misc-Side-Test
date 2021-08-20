@@ -21,23 +21,8 @@
 
 
 <script>
-async function getFile() {
-
-    let myAsyncAwait1 = await testCallBack1();
-    document.getElementById("demo1").innerHTML = "Async Await architecture: " + myAsyncAwait1;
-    
-    let myAsyncAwait2 = await testCallBack2();
-    document.getElementById("demo2").innerHTML = "Async Await architecture: " + myAsyncAwait2;
-    
-    var delayedStuff = function(myAsyncAwait3){
-        document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return of.... " + myAsyncAwait3;
-    }
-    testCallBack3(delayedStuff);
-    
-    document.getElementById("demo4").innerHTML = "Another Day";
-}
-getFile();
-
+ 
+console.log("");
 
 function testCallBack1(){
     return new Promise(resolve => {
@@ -57,7 +42,6 @@ function testCallBack2(){
     });  
 }
 
-
 var testCallBack3 = function(delayedStuffRef){
    
       var value = "WTF";
@@ -69,6 +53,30 @@ var testCallBack3 = function(delayedStuffRef){
         delayedStuffRef(value1);
       };
 }
+  
+async function getFile() {
+
+    let myAsyncAwait1 = await testCallBack1();
+    document.getElementById("demo1").innerHTML = "Async Await architecture: " + myAsyncAwait1;
+    
+    let myAsyncAwait2 = await testCallBack2();
+    document.getElementById("demo2").innerHTML = "Async Await architecture: " + myAsyncAwait2;
+    
+    var delayedStuff = function(myAsyncAwait3){
+        document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return of.... " + myAsyncAwait3;
+    }
+    testCallBack3(delayedStuff);
+    
+    document.getElementById("demo4").innerHTML = "Another Day";
+}
+getFile();
+
+
+
+
+
+
+
 
 
 

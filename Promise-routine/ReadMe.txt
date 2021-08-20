@@ -20,3 +20,8 @@ Process:
   test-space2-run-me3.html file the most advanced.
 
   08/05/2021 - Wrote this above back when. Do as it says.
+
+08/19/2021
+  Returning to this promise research because I need to apply it to "nested" LR.
+  So need to apply promise architecture to my LR API when one LR method relies 
+  on another LR method (nested).
