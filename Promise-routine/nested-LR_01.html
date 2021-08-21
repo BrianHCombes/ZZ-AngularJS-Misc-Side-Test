@@ -31,6 +31,8 @@
 
 <p id="demo5"></p>
 
+<p id="demo6"></p>
+
 
 <script>
  
@@ -66,19 +68,18 @@ var testCallBack3 = function(delayedStuffRef){
       };
 }
 
-function testCallBack4(){
+function testPromise4(){
     return new Promise(resolve => {
       console.log("calling");
       setTimeout(() => {
-        resolve('Using async await - Should be last with async await - Should be first without async await!');
-      }, 750);
+        //resolve('Using async await - Should be the third async await. Calls testPromise4()');
+        resolve(lr.w("promise:ms",1170,100,360,50));
+      }, 1750);
     });  
 }
-  
+
 async function getFile() {
   
-    
-
     let myAsyncAwait1 = await testCallBack1();
     document.getElementById("demo1").innerHTML = "Async Await architecture: " + myAsyncAwait1;
     
@@ -88,12 +89,15 @@ async function getFile() {
     var delayedStuff = function(myAsyncAwait3){
         document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return of.... " + myAsyncAwait3;
     }
-    testCallBack3(delayedStuff);
+    testCallBack3(delayedStuff); // Standard Callback
     
     document.getElementById("demo4").innerHTML = "Another Day";
     
-    document.getElementById("demo5").innerHTML = "LR is: " + lr.w("WTF:BS",1920, 20, 360, 10);
-    
+    let myAsyncAwait4 = await testPromise4();
+      document.getElementById("demo5").innerHTML = "LR is: " + lr.w("WTF:BS",1920, 20, 360, 10) + "and return value is: " + myAsyncAwait4;
+      
+      setTimeout(function(){document.getElementById("demo6").innerHTML = "LR is: " + lr.w("2nd line after await:BS",1920, 20, 360, 10);},500);
+
 }
 getFile();
 
