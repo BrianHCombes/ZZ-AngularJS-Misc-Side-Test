@@ -74,7 +74,17 @@ function testPromise4(){
       setTimeout(() => {
         //resolve('Using async await - Should be the third async await. Calls testPromise4()');
         resolve(lr.w("promise:ms",1170,100,360,50));
-      }, 1750);
+      }, 100);
+    });  
+}
+
+function testPromise5(){
+    return new Promise(resolve => {
+      console.log("calling");
+      setTimeout(() => {
+        //resolve('Using async await - Should be the third async await. Calls testPromise4()');
+        resolve(lr.w("",1170,100,360,50));
+      }, 1000);
     });  
 }
 
@@ -95,6 +105,10 @@ async function getFile() {
     
     let myAsyncAwait4 = await testPromise4();
       document.getElementById("demo5").innerHTML = "LR is: " + lr.w("WTF:BS",1920, 20, 360, 10) + "and return value is: " + myAsyncAwait4;
+      
+    let myAsyncAwait5 = await testPromise5();
+      document.getElementById("demo5").innerHTML = "LR is: " + lr.w("WTF:BS",1920, 20, 360, 10) + "and return value is: " + myAsyncAwait5;  
+      
       
       setTimeout(function(){document.getElementById("demo6").innerHTML = "LR is: " + lr.w("2nd line after await:BS",1920, 20, 360, 10);},500);
 

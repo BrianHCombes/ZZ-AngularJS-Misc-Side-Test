@@ -25,3 +25,15 @@ Process:
   Returning to this promise research because I need to apply it to "nested" LR.
   So need to apply promise architecture to my LR API when one LR method relies 
   on another LR method (nested).
+
+08/20/2021
+  Started promise research to manage my nested LR architecture and the more I
+  figure out the more I realize this is just plain old synchronous code when 
+  needed. Makes me wonder why this wasn't part of javascript in the first place
+  cause obviously this solves many problems. 
+
+  So when an LR expression is needed inside another LR expression (nested) I
+  need proper order. Async/Await and Promises puts code execution on hold until
+  the variable/object on the current line of code has been assigned.
+
+  So I will use Async/Await to manage my nested LR expressions. 
