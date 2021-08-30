@@ -7,6 +7,8 @@
   <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-getter-setters.js"></script>
   <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-process.js"></script>
   <script src="https://www.tarptiedown.com/node_modules/linear-response/module/lr-html-css.js"></script>
+  
+  <script src="nested-LR_01.js"></script>
 
 </head>  
   
@@ -33,88 +35,10 @@
 
 <p id="demo6"></p>
 
-
-<script>
- 
-console.log("");
-
-function testCallBack1(){
-    return new Promise(resolve => {
-      console.log("calling");
-      setTimeout(() => {
-        resolve('Using async await - This should be first with async await or last <span style="color:blue;"<u>without</u></span> async await!');
-      }, 1500);
-    });  
-}
-
-function testCallBack2(){
-    return new Promise(resolve => {
-      console.log("calling");
-      setTimeout(() => {
-        resolve('Using async await - Should be last with async await - Should be first without async await!');
-      }, 750);
-    });  
-}
-
-var testCallBack3 = function(delayedStuffRef){
-   
-      var value = "WTF";
-      setTimeout(func1, 3750);
-      console.log("value is: " + value);
-      var value1 = "WTF";
-      function func1(){
-        console.log("value1 from setTimeout is: " + value1);    
-        delayedStuffRef(value1);
-      };
-}
-
-function testPromise4(){
-    return new Promise(resolve => {
-      console.log("calling");
-      setTimeout(() => {
-        //resolve('Using async await - Should be the third async await. Calls testPromise4()');
-        resolve(lr.w("promise:ms",1170,100,360,50));
-      }, 1750);
-    });  
-}
-
-async function getFile() {
-  
-    let myAsyncAwait1 = await testCallBack1();
-    document.getElementById("demo1").innerHTML = "Async Await architecture: " + myAsyncAwait1;
-    
-    let myAsyncAwait2 = await testCallBack2();
-    document.getElementById("demo2").innerHTML = "Async Await architecture: " + myAsyncAwait2;
-    
-    var delayedStuff = function(myAsyncAwait3){
-        document.getElementById("demo3").innerHTML = "This is standard callback architecture with setTimeout delaying data return of.... " + myAsyncAwait3;
-    }
-    testCallBack3(delayedStuff); // Standard Callback
-    
-    document.getElementById("demo4").innerHTML = "Another Day";
-    
-    let myAsyncAwait4 = await testPromise4();
-      document.getElementById("demo5").innerHTML = "LR is: " + lr.w("WTF:BS",1920, 20, 360, 10) + "and return value is: " + myAsyncAwait4;
-      
-      setTimeout(function(){document.getElementById("demo6").innerHTML = "LR is: " + lr.w("2nd line after await:BS",1920, 20, 360, 10);},500);
-
-}
-getFile();
+<p id="demo7"></p>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-</script>
 
 </body>
 </html>
