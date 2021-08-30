@@ -12,6 +12,11 @@ SelfEd Objective:   To better understand asynchronous javascript for the purpose
 SelfEd Catalyst:    To reduce bad loading and get data into place in proper order.
 
 SelfEd References:  https://blog.bitsrc.io/understanding-asynchronous-javascript-the-event-loop-74cd408419ff
+                    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+                    https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await
+                    https://www.syntaxsuccess.com/viewarticle/angular-promise-chaining-explained
+                    https://ankitkamboj18.medium.com/is-javascript-synchronous-or-asynchronous-what-the-hell-is-a-promise-302ee008dfcd
+                    https://www.w3schools.com/Js/js_promise.asp
 
 Process:
 
@@ -37,3 +42,4 @@ Process:
   the variable/object on the current line of code has been assigned.
 
   So I will use Async/Await to manage my nested LR expressions. 
+  See file < nested-LR_01.html > for the nested LR action.  

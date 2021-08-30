@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="BasicSetup" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+<!--    
+    Used in TTD-ViewNav platforms
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>
+    <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
+-->    
+
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/BETA-MODULE/lr-main.js"></script>
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/BETA-MODULE/lr-getter-setters.js"></script>
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/BETA-MODULE/lr-process.js"></script>
+    <script src="https://www.tarptiedown.com/node_modules/linear-response/BETA-MODULE/lr-html-css.js"></script>
+
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="nested-LR-angular_01-controller.js"></script> 
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+
+    <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+                async/await for nested LR
+        </b>
+    </h1><br> 
+
+    <div ng-controller="basicCtrl as basicCTRL">
+    
+        <!--<div>{{basicCTRL.basicVar1}}</div>    -->
+        <!--<br>-->
+        <div>basicCTRL.asyncAwaitTest_01 is: {{basicCTRL.asyncAwaitTest_01}}</div>
+        <br>
+        <div style="color:blue;">basicCTRL.insetLR is: {{basicCTRL.insetLR}}</div>
+
+    </div>
+</body>
+</html>
