@@ -42,6 +42,7 @@
                   console.log("finalLR is: " + finalLR);
                 $timeout(function(){   
                   basic.insetLR = insetLRpromise;
+                  basic.finalLR = finalLR;
                 },0);
               }
               asyncAwaitBlockFunc();

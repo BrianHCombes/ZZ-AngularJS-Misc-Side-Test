@@ -43,3 +43,12 @@ Process:
 
   So I will use Async/Await to manage my nested LR expressions. 
   See file < nested-LR_01.html > for the nested LR action.  
+
+08/29/2021
+    File: C:\xampp\htdocs\ZZ-AngularJS-Misc-Side-Test\Promise-routine\nested-LR-angular_01-controller.js
+    File: C:\xampp\htdocs\ZZ-AngularJS-Misc-Side-Test\Promise-routine\nested-LR-angular_01.html
+    Have gotten nested LR working with async/await protocol per the < insetLR() > 
+    function and the < insetLRpromise > variable. One key takeaway is the use
+    of the < $timeout() > service to force a digest cycle to update the DOM.
+    Already am using < $timeout() > in the < TTD-ViewNav-New-Layout > project
+    in the < controller-client.js file >.
