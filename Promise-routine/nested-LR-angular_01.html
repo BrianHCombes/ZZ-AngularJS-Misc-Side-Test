@@ -44,6 +44,15 @@
         <div>basicCTRL.asyncAwaitTest_01 is: {{basicCTRL.asyncAwaitTest_01}}</div>
         <br>
         <div style="color:blue;">basicCTRL.insetLR is: {{basicCTRL.insetLR}}</div>
+        <br>
+        <div style="color:blue;">basicCTRL.finalLR is: {{basicCTRL.finalLR}}</div>
+        <br>
+        <div style="color:blue; font-size:1.5em;">
+          finalLR is the result of nested LR architecture and thus basicCTRL.finalLR is: {{basicCTRL.finalLR}}
+          <br>
+          where the output of insetLR() is based on lr.w and is inserted as a parameter into a lr.r expression to yield finalLR.
+        </div>
+        
 
     </div>
 </body>
