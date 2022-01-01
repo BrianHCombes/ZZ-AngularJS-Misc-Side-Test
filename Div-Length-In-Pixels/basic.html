@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="BasicSetup" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+<!--    
+    Used in TTD-ViewNav platforms
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>
+    <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
+    
+-->    
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="basic-controller.js"></script> 
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+
+    <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+          Below are the reported element lengths of various elements<br>using the clientWidth property. <br><br>See the controller.
+        </b>
+    </h1><br> 
+
+    <div ng-controller="basicCtrl as basicCTRL">
+    
+        <div>{{basicCTRL.basicVar1}}</div>   
+        
+        <br><br>
+        <div id="lengthTest1">WhoDat!</div>
+        
+        <table id="lengthTest4">
+          <tr id="lengthTest5">
+            <td id="lengthTest2">
+              WhoDat_02!
+              <div id="lengthTest3" style="display:inline-block">And then there was length 3</div>
+            </td>
+          </tr>
+        </table>
+        <br><br>
+        
+        <div id="{{element.id}}" ng-repeat="element in basicCTRL.elementArray1" style="display:inline-block">
+          {{element.id}}<br>{{element.text}}<br><br>
+        </div>
+        
+        <br><br><br><br>
+ 
+        
+<!--************************************************************************************************************************************************-->
+<!--Table element length totaling-->
+<!--************************************************************************************************************************************************-->        
+        <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+          Of primary interest is adding up the lengths of the &lt;td&gt; elements in a table built by <span style="color:blue">ng-repeat.</span> 
+          <br><br>As is done below. See the controller.
+        </b>
+    </h1><br> 
+        
+        <table style="color:blue; font-size:1.1em">
+          <tr>
+            <td id="{{element.id}}" ng-repeat="element in basicCTRL.elementArray2" style="">
+              {{element.id}}<br>{{element.text}}<br><br>
+            </td>
+          </tr>
+        </table>
+        
+    
+    
+        
+
+    </div>
+</body>
+</html>

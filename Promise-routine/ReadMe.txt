@@ -52,3 +52,7 @@ Process:
     of the < $timeout() > service to force a digest cycle to update the DOM.
     Already am using < $timeout() > in the < TTD-ViewNav-New-Layout > project
     in the < controller-client.js file >.
+
+10/17/2021
+    enter: Are all operations inside a promise completed before return is completed javascript
+    you get: https://stackoverflow.com/questions/27759593/how-do-i-wait-for-a-promise-to-finish-before-returning-the-variable-of-a-functio
