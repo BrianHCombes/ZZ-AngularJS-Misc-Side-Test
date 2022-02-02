@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="BasicSetup" >
+<head>
+    <title>Multiple Views Multiple Controllers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+    
+<!--    
+    Used in TTD-ViewNav platforms
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js?ver=4.1.0" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-sanitize.js?ver=4.1.0" ></script>
+    <script src="//code.angularjs.org/1.8.0/angular-animate.js"></script>
+    <script src="https://unpkg.com/@uirouter/angularjs@1.0.24/release/angular-ui-router.js?ver=4.1.0"></script>
+    
+-->    
+    <script src="//npmcdn.com/show-current-browser-url"></script>
+    <script src="//npmcdn.com/@uirouter/visualizer@4.0.2"></script>
+    
+    <script src="//npmcdn.com/angular@1.6.5/angular.js"></script>
+    <script src="basic-controller.js"></script> 
+
+<style>
+
+</style>
+</head>
+<body style="margin:10px auto 0px auto; width:960px;">
+
+    <h1 style="color:black; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+        <b>
+          Below is array sorting stuff from a plain vanilla controller.<br>
+        </b>
+    </h1> 
+    <h3 style="color:blue; text-align:center; border:2px solid black; padding:8px; border-radius:6px; background-color:yellow;">
+      The specific objective is determining which row of rows is longest. 
+      The element rows are distinguished by the "lineBreakPortrait" object id property
+      which forces a line break in the thumbnail table in the portrait 
+      screen of the TTD 2nd Gen layout.<br><br>
+      The longest row is used to determine how wide the make the wrapping div space for the thumbnail table.
+    </h3>
+
+    <div ng-controller="basicCtrl as basicCTRL">
+      
+      <div ng-repeat="thumbNails in basicCTRL.thumbNails">
+        <div >{{thumbNails.id}}</div>
+        
+      </div>
+      
+      
+      <div>Sorted is: {{basicCTRL.metaData}}</div>
+      <br>
+      <div style="color:red; background-color:yellow; display:inline-block; border:2px solid black; border-radius:10px; padding:5px 20px;"><b>The longest row is {{basicCTRL.longestRow}}</b></div>
+    
+
+    </div>
+</body>
+</html>
